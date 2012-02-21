@@ -1,0 +1,15 @@
+﻿{
+	"name": "Chrome URL Test",
+	"version": "0.0",
+	"description": "Opens and copies many URLs at once",
+	"minimum_chrome_version": "13",
+	"browser_action": {
+		"default_icon": "icon.png",
+		"popup": "popup.html"
+	},
+	"permission": [
+		"tabs",
+		"clipboardRead",
+		"clipboardWrite"
+	]
+}
