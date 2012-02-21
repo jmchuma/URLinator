@@ -1,6 +1,11 @@
-﻿<textarea id="urls" rows="5" cols="40"
-	placeholder="List of URLs separated by blanks characters"
->
-</textarea>
-<button id="open" type="button" onclick="">Open</button>
-<button id="copy" type="button" onclick="URLsToPasteBoard()">Copy</button>
+<html>
+	<head>
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+
+	<body onload="init()">
+		<textarea id="urls" rows="5" cols="40" placeholder="List of URLS separated by blank characters."></textarea>
+		<button id="open" type="button" onclick="toDo()" data-i18n-id="openButton" >Open</button>
+		<button id="copy" type="button" onclick="toDo()" data-i18n-id="copyButton" >Copy</button>
+	</body>
+</html>

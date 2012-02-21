@@ -1,8 +1,9 @@
-﻿{
+{
 	"name": "Chrome URL Test",
-	"version": "0.0",
-	"description": "Opens and copies many URLs at once",
+	"version": "0.2",
+	"description": "__MSG_extensionDescription__",
 	"minimum_chrome_version": "13",
+	"default_locale": "en",
 	"browser_action": {
 		"default_icon": "icon.png",
 		"popup": "popup.html"

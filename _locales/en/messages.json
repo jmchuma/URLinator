@@ -1,0 +1,18 @@
+{
+	"extensionDescription": {
+		"message": "Opens an copies many URLs at once.",
+		"description": "Extension description."
+	},
+	"textAreaPlaceholder": {
+		"message": "List of the URLs separated by blank character.",
+		"description": "Message shown in the text area."
+	},
+	"openButton": {
+		"message": "Open",
+		"description": "Text for the \"Open\" button."
+	},
+	"copyButton": {
+		"message": "Copy",
+		"description": "Text for the \"Copy\" button."
+	}
+}

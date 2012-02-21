@@ -1,0 +1,18 @@
+{
+	"extensionDescription": {
+		"message": "Abre y copia varias URLs de una vez.",
+		"description": "Descripción de la extensión."
+	},
+	"textAreaPlaceholder": {
+		"message": "Lista de URLs separadas por caracteres blancos.",
+		"description": "Mensaje a mostrar en el area de texto."
+	},
+	"openButton": {
+		"message": "Abrir",
+		"description": "Texto del botón \"Abrir\"."
+	},
+	"copyButton": {
+		"message": "Copiar",
+		"description": "Texto del botón \"Copiar\"."
+	}
+}
