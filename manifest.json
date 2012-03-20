@@ -8,7 +8,7 @@
 		"default_icon": "icon.png",
 		"popup": "popup.html"
 	},
-	"permission": [
+	"permissions": [
 		"tabs",
 		"clipboardRead",
 		"clipboardWrite"
