@@ -1,16 +1,19 @@
 {
-	"name": "Chrome URL Test",
-	"version": "0.4",
-	"description": "__MSG_extensionDescription__",
-	"minimum_chrome_version": "13",
-	"default_locale": "en",
 	"browser_action": {
 		"default_icon": "icon.png",
+		"default_title": "__MSG_tooltip__",
 		"popup": "popup.html"
 	},
+	"content_security_policy": "default-src 'self'",
+	"default_locale": "en",
+	"description": "__MSG_description__",
+	"name": "Chrome URL Test",
+	"incognito": "spanning",
+	"minimum_chrome_version": "13",
 	"permissions": [
 		"tabs",
 		"clipboardRead",
 		"clipboardWrite"
-	]
+	],
+	"version": "0.4.1"
 }

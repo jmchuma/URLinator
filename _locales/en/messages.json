@@ -1,7 +1,11 @@
 {
-	"extensionDescription": {
+	"description": {
 		"message": "Opens an copies many URLs at once.",
 		"description": "Extension description."
+	},
+	"tooltip": {
+		"message": "Tabs <=> Clipboard",
+		"description": "Text to display when mouse hovers the icon."
 	},
 	"textAreaPlaceholder": {
 		"message": "List of the URLs separated by blank character.",

@@ -8,7 +8,7 @@ var url_list = new Array();
  * Initialize things in the HTML popup:
  *	- Translate interface
  */
-function init() {
+function i18nalize() {
 	var objects = document.getElementsByTagName('*');
 
 	for(var i = 0; i < objects.length; i++) {
@@ -56,8 +56,24 @@ function tabsToBoard() {
 		});
 	});
 
+	// the previous call is asynchonous so well wait till it's done
+	//while(url_list.length  == 0){}
+
 	console.log("url_list has %d elements", url_list.length);
 	box.value = url_list.join('\n');
 	console.log("text area value:\n%s", box.value);
+	// select the text to reduce steps?
+	//box.select();
+	// put it directly in the clipboard?
+	//document.execCommand('cut');
 }
+
+/**
+ *
+ */
+document.addEventListener('DOMContentLoaded', function() {
+	i18nalize();
+	document.getElementById('open').addEventListener('click', boardToTabs);
+	document.getElementById('copy').addEventListener('click', tabsToBoard);
+});
 
