@@ -1,3 +1,6 @@
+/**
+ * Store the list of URLs
+ */
 var url_list = new Array();
 
 
@@ -21,7 +24,13 @@ function init() {
  * Copies URL from clipboard to tabs
  */
 function boardToTabs() {
-	alert('boardToTabs is not ready yet');
+	//alert('boardToTabs is not ready yet');
+	var box = document.getElementById('urls');
+	// WARNING: according to https://developer.mozilla.org/en/DOM/HTMLTextAreaElement
+	//			the focus method is obselete.
+	// TODO: search another way to focus on the textarea.
+	box.focus();
+	document.execCommand('paste');
 }
 
 
@@ -38,6 +47,7 @@ function tabsToBoard() {
 		}
 	});
 	/**/
+	// get the URLs from the tabs
 	chrome.windows.getAll({populate: true}, function(wins_array){
 		wins_array.forEach(function(win) {
 			win.tabs.forEach(function(tab) {
@@ -46,6 +56,8 @@ function tabsToBoard() {
 		});
 	});
 
-	box.innerHTML = url_list.join('\n');
+	console.log("url_list has %d elements", url_list.length);
+	box.value = url_list.join('\n');
+	console.log("text area value:\n%s", box.value);
 }
 
