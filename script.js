@@ -24,8 +24,8 @@ function i18nalize() {
  * Copies URL from clipboard to tabs
  */
 function boardToTabs() {
-	//alert('boardToTabs is not ready yet');
 	var box = document.getElementById('urls');
+
 	// WARNING: according to https://developer.mozilla.org/en/DOM/HTMLTextAreaElement
 	//			the focus method is obselete.
 	// TODO: search another way to focus on the textarea.
@@ -40,23 +40,6 @@ function boardToTabs() {
 function tabsToBoard() {
 	var box = document.getElementById('urls');
 
-	/*
-	chrome.windows.getLastFocused(function(win){
-		for(tab in win.tabs) {
-			url_list.push(tab.url);
-		}
-	});
-	/**/
-	// get URLs from all tabs
-	chrome.tabs.query({}, function(tabs) {
-		tabs.forEach(function(tab) {
-			url_list.push(tab.url);
-		});
-	});
-
-	// the previous call is asynchonous so well wait till it's done
-	//while(url_list.length  == 0){}
-
 	console.log("url_list has %d elements", url_list.length);
 	box.value = url_list.join('\n');
 	console.log("text area value:\n%s", box.value);
@@ -70,6 +53,15 @@ function tabsToBoard() {
  *
  */
 document.addEventListener('DOMContentLoaded', function() {
+	/* Since all this is asyncrhonous is better to do it here.
+	 * This way the URL list will be ready if needed.
+	 */
+	chrome.tabs.query({}, function(tabs) {
+		tabs.forEach(function(tab) {
+			url_list.push(tab.url);
+		});
+	});
+
 	i18nalize();
 	document.getElementById('open').addEventListener('click', boardToTabs);
 	document.getElementById('copy').addEventListener('click', tabsToBoard);
