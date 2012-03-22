@@ -47,12 +47,10 @@ function tabsToBoard() {
 		}
 	});
 	/**/
-	// get the URLs from the tabs
-	chrome.windows.getAll({populate: true}, function(wins_array){
-		wins_array.forEach(function(win) {
-			win.tabs.forEach(function(tab) {
-				url_list.push(tab.url);
-			});
+	// get URLs from all tabs
+	chrome.tabs.query({}, function(tabs) {
+		tabs.forEach(function(tab) {
+			url_list.push(tab.url);
 		});
 	});
 
