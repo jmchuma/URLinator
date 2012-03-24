@@ -1,12 +1,17 @@
 Unamed Chrome Extension Project
 ===============================
 
-This is my first extension for Google Chrome. I'm still thinking on a
-name and a logo but I know what I want it to do.
+Many times I've wanted to copy the URLs from the pages I had opened to a text
+file, and I've always found my self doing it one by one. This may not be a big
+issue if there are only a few open tabs, but when you have many it become
+timesome. For this reason I decided to create this extension. The goal is to
+allow users to:
 
-Goals
------
+* Copy all URLs from the current window to a text area or to the clipboard.
+* Copy all URLs from all windows to a text area or to the clipboard.
+* (TODO) Get URLs from the text area (or from the clipboard) and open them in
+new tabs in the current window.
 
-* Copy all the URLs on a window's tab to the clipboard
+_**NOTE**: This is my first extension for Google Chrome. I'm still thinking on a
+name and a logo._
 
-* Open copied URLs on different tabs on a window

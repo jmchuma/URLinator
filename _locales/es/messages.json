@@ -7,6 +7,14 @@
 		"message": "Pesta&ntilde;as <=> Portapapeles",
 		"description": "Texto que se muestra cuando el rat&oacute;n pasa por encima del icono."
 	},
+	"labelWins": {
+		"message": "¿De todas las ventanas?",
+		"description": "Texto para la etiqueta del primer checkbox."
+	},
+	"labelBoard": {
+		"message": "¿Usar portapapeles?",
+		"description": "Texto para la etiqueta del segundo checkbox."
+	},
 	"textAreaPlaceholder": {
 		"message": "Lista de URLs separadas por caracteres blancos.",
 		"description": "Mensaje a mostrar en el area de texto."

@@ -3,6 +3,14 @@
 		"message": "Opens an copies many URLs at once.",
 		"description": "Extension description."
 	},
+	"labelWins": {
+		"message": "From all windows?",
+		"description": "Text for the first checkbox label."
+	},
+	"labelBoard": {
+		"message": "Use clipboard?",
+		"description": "Text for the second checkbox label."
+	},
 	"tooltip": {
 		"message": "Tabs <=> Clipboard",
 		"description": "Text to display when mouse hovers the icon."

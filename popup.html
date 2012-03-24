@@ -1,12 +1,25 @@
 <!DOCTYPE html>
+<!--
+Copyright (c) 2012 Jose María Chumo Mata. All rights reserved.
+Use of this source code is governed by a 3-clause BSD license that can be
+found in the LICENSE file.
+-->
 <html>
 	<head>
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 
 	<body>
+		<label for="allWindows">
+			<input id="allWindows" type="checkbox" />
+			<span data-i18n-id="labelWins"></span>
+		</label>
+		<label for="clipboard">
+			<input id="clipboard" type="checkbox" />
+			<span data-i18n-id="labelBoard"></span>
+		</label>
 		<textarea id="urls" rows="6" cols="60" placeholder="List of URLs separated by blank characters."></textarea>
-		<button id="open" type="button" data-i18n-id="openButton">Open</button>
-		<button id="copy" type="button" data-i18n-id="copyButton">Copy</button>
+		<button id="open" type="button" data-i18n-id="openButton"></button>
+		<button id="copy" type="button" data-i18n-id="copyButton"></button>
 	</body>
 </html>

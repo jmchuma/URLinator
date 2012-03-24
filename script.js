@@ -1,12 +1,20 @@
+/*
+ * Copyright (c) 2012 Jose María Chumo Mata. All rights reserved.
+ * Use of this source code is governed by a 3-clause BSD license that can be
+ * found in the LICENSE file.
+ */
+
+
 /**
  * Store the list of URLs
  */
-var url_list = new Array();
+var url_list = {'this':[], 'others':[]};
+// TODO: another array to get the URLs?
+//var urls_in
 
 
 /**
- * Initialize things in the HTML popup:
- *	- Translate interface
+ * Translate text in the popup interface
  */
 function i18nalize() {
 	var objects = document.getElementsByTagName('*');
@@ -14,9 +22,27 @@ function i18nalize() {
 	for(var i = 0; i < objects.length; i++) {
 		// to understand this see HTML5 custom attributes
 		if(objects[i].dataset && objects[i].dataset.i18nId) {
-			objects[i].innerHTML = chrome.i18n.getMessage(objects[i].dataset.i18nId);
+			objects[i].innerText = chrome.i18n.getMessage(objects[i].dataset.i18nId);
 		}
 	}
+}
+
+
+/**
+ * Populate the lists containing the URLs from tabs
+ */
+function URLsFromTabs() {
+	chrome.windows.getCurrent(function(currentWindow) {
+		chrome.tabs.query({}, function(tabs) {
+			tabs.forEach(function(tab) {
+				if(tab.windowId == currentWindow.id) {
+					url_list['this'].push(tab.url);
+				} else {
+					url_list['others'].push(tab.url);
+				}
+			});
+		});
+	});
 }
 
 
@@ -25,6 +51,8 @@ function i18nalize() {
  */
 function boardToTabs() {
 	var box = document.getElementById('urls');
+	// clear content just in case?
+	box.value = '';
 
 	// WARNING: according to https://developer.mozilla.org/en/DOM/HTMLTextAreaElement
 	//			the focus method is obselete.
@@ -40,27 +68,33 @@ function boardToTabs() {
 function tabsToBoard() {
 	var box = document.getElementById('urls');
 
-	console.log("url_list has %d elements", url_list.length);
-	box.value = url_list.join('\n');
-	console.log("text area value:\n%s", box.value);
-	// select the text to reduce steps?
-	//box.select();
-	// put it directly in the clipboard?
-	//document.execCommand('cut');
+	//console.log("url_list has %d elements", url_list.length);
+
+	if(document.getElementById('allWindows').checked) {
+		box.value = url_list['this'].join('\n')+'\n'+url_list['others'].join('\n');
+	} else {
+		box.value = url_list['this'].join('\n');
+	}
+
+	//console.log("text area value:\n%s", box.value);
+
+	if(document.getElementById('clipboard').checked) {
+		// select text
+		box.select();
+		// cut it
+		document.execCommand('cut');
+	}
 }
 
+
 /**
- *
+ * Add an event listener for the onload event y the HTML.
  */
 document.addEventListener('DOMContentLoaded', function() {
 	/* Since all this is asyncrhonous is better to do it here.
 	 * This way the URL list will be ready if needed.
 	 */
-	chrome.tabs.query({}, function(tabs) {
-		tabs.forEach(function(tab) {
-			url_list.push(tab.url);
-		});
-	});
+	URLsFromTabs();
 
 	i18nalize();
 	document.getElementById('open').addEventListener('click', boardToTabs);
