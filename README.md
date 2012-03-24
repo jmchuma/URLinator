@@ -9,9 +9,11 @@ allow users to:
 
 * Copy all URLs from the current window to a text area or to the clipboard.
 * Copy all URLs from all windows to a text area or to the clipboard.
-* (TODO) Get URLs from the text area (or from the clipboard) and open them in
+* Get URLs from the text area (or from the clipboard) and open them in
 new tabs in the current window.
+    + URLs must be separated in different lines.
+    + URLs without an scheme (the _whatever://_ at the beginning) are treated as
+	  search terms and sent to Google search engine.
 
-_**NOTE**: This is my first extension for Google Chrome. I'm still thinking on a
-name and a logo._
+_**NOTE**: I'm still thinking on a name and a logo._
 

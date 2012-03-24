@@ -51,14 +51,29 @@ function URLsFromTabs() {
  */
 function boardToTabs() {
 	var box = document.getElementById('urls');
-	// clear content just in case?
-	box.value = '';
 
-	// WARNING: according to https://developer.mozilla.org/en/DOM/HTMLTextAreaElement
-	//			the focus method is obselete.
-	// TODO: search another way to focus on the textarea.
-	box.focus();
-	document.execCommand('paste');
+	if(document.getElementById('clipboard').checked) {
+		// clear content just in case?
+		box.value = '';
+		// WARNING: according to https://developer.mozilla.org/en/DOM/HTMLTextAreaElement
+		//			the focus method is obselete.
+		// TODO: seek another way to focus on the textarea.
+		box.focus();
+		document.execCommand('paste');
+	}
+
+	box.value.split('\n').forEach(function(url) {
+		url = url.trim();
+		if(url != "") {
+			// check it it contains the URL schema
+			if(url.search('^[a-zA-Z]+://') == -1) {
+				url = "http://www.google.com/#q="+url;
+			}
+			chrome.tabs.create({'url': url.trim(), 'active': false});
+		}
+	});
+
+	box.value = '';
 }
 
 
