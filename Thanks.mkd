@@ -1,0 +1,16 @@
+Wow! It's a gret honor to be here tonight. I wasn't expenting this.
+I would like to thank:
+
+* Jose for suggestin:
+    - User manual (more or less done).
+    - Support direct sharing (thinking about it).
+* Noe for suggesting:
+    - Use cases for testing (I'm on it).
+* Charlie for suggesting:
+    - Font change. On my defense I have to say he tested it before I added the stylesheet. I was
+	going to do it, I swear!
+    - Filtering (not yet implemented, but I'm on it).
+* Dani
+
+And last but not least I would like to thank all the testers I've spammed. I won't name you all
+because you are too many.
