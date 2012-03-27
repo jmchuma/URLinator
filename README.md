@@ -24,7 +24,7 @@ How to do stuff with the thing.
 
 Clicking the extension button pops up something like this:
 
-![Popup controls](jmchuma/ChromeExtesionTest/raw/master/img/popup.png "Popup controls")
+![Popup controls](ChromeExtesionTest/raw/master/img/popup.png "Popup controls")
 
 This is how it works:
 
