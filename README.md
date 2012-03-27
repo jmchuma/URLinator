@@ -24,7 +24,7 @@ How to do stuff with the thing.
 
 Clicking the extension button pops up something like this:
 
-![Popup controls](/img/popup.png "Popup controls")
+![Popup controls](img/popup.png "Popup controls")
 
 This is how it works:
 
