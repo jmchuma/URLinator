@@ -1,30 +1,42 @@
 {
+	"copyButton": {
+		"message": "Copy",
+		"description": "Text for the \"Copy\" button."
+	},
 	"description": {
 		"message": "Opens an copies many URLs at once.",
 		"description": "Extension description."
 	},
-	"labelWins": {
-		"message": "From all windows?",
-		"description": "Text for the first checkbox label."
+	"filterLabel": {
+		"message": "Filter",
+		"description": "Latel for the filtering box."
+	},
+	"filterPlaceholder": {
+		"message": "Filter patterns",
+		"description": "Placeholder for the filtering box."
 	},
 	"labelBoard": {
 		"message": "Use clipboard?",
 		"description": "Text for the second checkbox label."
 	},
-	"tooltip": {
-		"message": "Tabs <=> Clipboard",
-		"description": "Text to display when mouse hovers the icon."
-	},
-	"textAreaPlaceholder": {
-		"message": "List of the URLs separated by blank character.",
-		"description": "Message shown in the text area."
+	"labelWins": {
+		"message": "From all windows?",
+		"description": "Text for the first checkbox label."
 	},
 	"openButton": {
 		"message": "Open",
 		"description": "Text for the \"Open\" button."
 	},
-	"copyButton": {
-		"message": "Copy",
-		"description": "Text for the \"Copy\" button."
+	"textareaLabel": {
+		"message": "URLs",
+		"description": "Label for the text area."
+	},
+	"textareaPlaceholder": {
+		"message": "List of the URLs separated by blank character.",
+		"description": "Message shown in the text area."
+	},
+	"tooltip": {
+		"message": "Tabs <=> Clipboard",
+		"description": "Text to display when mouse hovers the icon."
 	}
 }

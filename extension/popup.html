@@ -12,12 +12,28 @@ found in the LICENSE file.
 	</head>
 
 	<body>
-		<input id="allWindows" type="checkbox"/>
-		<label for="allWindows" data-i18n-id="labelWins"></label>
-		<input id="clipboard" type="checkbox"/>
-		<label for="clipboard" data-i18n-id="labelBoard"></label>
-		<textarea id="urls" rows="6" cols="60" placeholder="List of URLs separated by blank characters."></textarea>
-		<button id="open" type="button" data-i18n-id="openButton"></button>
-		<button id="copy" type="button" data-i18n-id="copyButton"></button>
+		<div>
+			<input id="allWindows" type="checkbox"/>
+			<label for="allWindows" data-i18n-id="labelWins"></label>
+
+			<input id="clipboard" type="checkbox"/>
+			<label for="clipboard" data-i18n-id="labelBoard"></label>
+		</div>
+
+		<div>
+			<label for="filter" data-i18n-id="filterLabel"></label>
+			<!--input id="filter" type="text" placeholder="Filter patterns"/-->
+			<input id="filter" type="search" placeholder="Filter patterns"/>
+		</div>
+
+		<div>
+			<label for="urls" data-i18n-id="textareaLabel"></label>
+			<textarea id="urls" rows="6" cols="60" placeholder="List of URLs separated by blank characters." autofocus></textarea>
+		</div>
+
+		<div id="buttons">
+			<button id="open" type="button" data-i18n-id="openButton"></button>
+			<button id="copy" type="button" data-i18n-id="copyButton"></button>
+		</div>
 	</body>
 </html>

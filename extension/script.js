@@ -25,6 +25,9 @@ function i18nalize() {
 			objects[i].innerText = chrome.i18n.getMessage(objects[i].dataset.i18nId);
 		}
 	}
+
+	document.getElementById('filter').placeholder = chrome.i18n.getMessage('filterPlaceholder');
+	document.getElementById('urls').placeholder = chrome.i18n.getMessage('textareaPlaceholder');
 }
 
 
@@ -59,6 +62,7 @@ function boardToTabs() {
 		//			the focus method is obselete.
 		// TODO: seek another way to focus on the textarea.
 		box.focus();
+		//box.autofocus = true;
 		document.execCommand('paste');
 	}
 
@@ -82,6 +86,7 @@ function boardToTabs() {
  */
 function tabsToBoard() {
 	var box = document.getElementById('urls');
+	var filter = document.getElementById('filter'); // TODO
 
 	//console.log("url_list has %d elements", url_list.length);
 

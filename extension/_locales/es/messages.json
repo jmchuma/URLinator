@@ -1,30 +1,42 @@
 {
+	"copyButton": {
+		"message": "Copiar",
+		"description": "Texto del botón \"Copiar\"."
+	},
 	"description": {
 		"message": "Abre y copia varias URLs de una vez.",
 		"description": "Descripción de la extensión."
 	},
-	"tooltip": {
-		"message": "Pesta&ntilde;as <=> Portapapeles",
-		"description": "Texto que se muestra cuando el rat&oacute;n pasa por encima del icono."
+	"filterLabel": {
+		"message": "Filtro",
+		"description": "Etiqueta para los filtros."
 	},
-	"labelWins": {
-		"message": "¿De todas las ventanas?",
-		"description": "Texto para la etiqueta del primer checkbox."
+	"filterPlaceholder": {
+		"message": "Patr&oacute;n de filtros",
+		"description": "Mensaje a mostrar para los filtros."
 	},
 	"labelBoard": {
 		"message": "¿Usar portapapeles?",
 		"description": "Texto para la etiqueta del segundo checkbox."
 	},
-	"textAreaPlaceholder": {
-		"message": "Lista de URLs separadas por caracteres blancos.",
-		"description": "Mensaje a mostrar en el area de texto."
+	"labelWins": {
+		"message": "¿De todas las ventanas?",
+		"description": "Texto para la etiqueta del primer checkbox."
 	},
 	"openButton": {
 		"message": "Abrir",
 		"description": "Texto del botón \"Abrir\"."
 	},
-	"copyButton": {
-		"message": "Copiar",
-		"description": "Texto del botón \"Copiar\"."
+	"textareaLabel": {
+		"message": "URLs",
+		"description": "Texto para la etiequta del text area."
+	},
+	"textareaPlaceholder": {
+		"message": "Lista de URLs separadas por caracteres blancos.",
+		"description": "Mensaje a mostrar en el area de texto."
+	},
+	"tooltip": {
+		"message": "Pesta&ntilde;as <=> Portapapeles",
+		"description": "Texto que se muestra cuando el rat&oacute;n pasa por encima del icono."
 	}
 }
