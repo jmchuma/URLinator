@@ -15,6 +15,13 @@ new tabs in the current window.
     + URLs without an scheme (the _whatever://_ at the beginning) are treated as
 	  search terms and sent to Google search engine.
 
+Installation
+------------
+
+For the time being the extension is not available on Chrome Web Store (and I
+don't know if it will ever be) so go to the [download page](URLinator/downloads "Download page")
+and grab the latest version.
+
 Usage
 -----
 
@@ -24,7 +31,7 @@ How to do stuff with the thing.
 
 Clicking the extension button pops up something like this:
 
-![Popup controls](ChromeExtesionTest/raw/master/img/popup.png "Popup controls")
+![Popup controls](URLinator/raw/master/img/popup.png "Popup controls")
 
 This is how it works:
 
@@ -34,6 +41,7 @@ This is how it works:
 * **Second checkbox:** allows interaction with the clipboard.
     - Checked: get and put content directly to the clipboard.
     - Unchecked: get and put content in the text area.
+* **Filter box:** allows to use words as filters when retrieving or opening URLs. **Not ready yet.**
 * **Textarea:** works as input and output (if the second checkbox is not selected).
 * **Open button:** opens new tabs with the URLs and search terms.
 * **Copy button:** grabs the URLs from the tabs.
