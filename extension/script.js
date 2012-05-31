@@ -30,6 +30,13 @@ function i18nalize() {
 	document.getElementById('urls').placeholder = chrome.i18n.getMessage('textareaPlaceholder');
 }
 
+function clear() {
+	document.getElementById('urls').value = '';
+	document.getElementById('filter').value = '';
+	document.getElementById('clipboard').checked = false;
+	document.getElementById('allWindows').checked = false;
+}
+
 
 /**
  * Populate the lists containing the URLs from tabs
@@ -119,5 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	i18nalize();
 	document.getElementById('open').addEventListener('click', boardToTabs);
 	document.getElementById('copy').addEventListener('click', tabsToBoard);
+	document.getElementById('clear').addEventListener('click', clear);
 });
 

@@ -27,6 +27,10 @@
 		"message": "Abrir",
 		"description": "Texto del botón \"Abrir\"."
 	},
+	"resetButton": {
+		"message": "Resetear",
+		"description": "Texto del botón \"Resetear\"."
+	},
 	"textareaLabel": {
 		"message": "URLs",
 		"description": "Texto para la etiequta del text area."

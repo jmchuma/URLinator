@@ -27,6 +27,10 @@
 		"message": "Open",
 		"description": "Text for the \"Open\" button."
 	},
+	"resetButton": {
+		"message": "Reset",
+		"description": "Text for the \"Reset\" button."
+	},
 	"textareaLabel": {
 		"message": "URLs",
 		"description": "Label for the text area."
