@@ -8,9 +8,10 @@ I would like to thank:
     - Use cases for testing (I'm on it).
 * Charlie for suggesting:
     - Font change. On my defense I have to say he tested it before I added the stylesheet. I was
-	going to do it, I swear!
-    - Filtering (not yet implemented, but I'm on it).
-* Dani
+	going to do it. I swear!
+    - Filtering (testing).
+* Dani for testing the thing
+* Gara for translation suggestions
 
 And last but not least I would like to thank all the testers I've spammed. I won't name you all
 because you are too many.

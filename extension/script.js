@@ -30,13 +30,6 @@ function i18nalize() {
 	document.getElementById('urls').placeholder = chrome.i18n.getMessage('textareaPlaceholder');
 }
 
-function clear() {
-	document.getElementById('urls').value = '';
-	document.getElementById('filter').value = '';
-	document.getElementById('clipboard').checked = false;
-	document.getElementById('allWindows').checked = false;
-}
-
 
 /**
  * Populate the lists containing the URLs from tabs
@@ -45,10 +38,13 @@ function URLsFromTabs() {
 	chrome.windows.getCurrent(function(currentWindow) {
 		chrome.tabs.query({}, function(tabs) {
 			tabs.forEach(function(tab) {
-				if(tab.windowId == currentWindow.id) {
-					url_list['this'].push(tab.url);
-				} else {
-					url_list['others'].push(tab.url);
+				var id = 'this';
+				if(tab.windowId != currentWindow.id) {
+					id = 'others';
+				}
+
+				if(url_list[id].indexOf(tab.url) == -1) {
+					url_list[id].push(tab.url);
 				}
 			});
 		});
@@ -73,7 +69,7 @@ function boardToTabs() {
 		document.execCommand('paste');
 	}
 
-	box.value.split('\n').forEach(function(url) {
+	box.value.split(/\s/).forEach(function(url) {
 		url = url.trim();
 		if(url != "") {
 			// check it it contains the URL schema
@@ -97,11 +93,12 @@ function tabsToBoard() {
 
 	//console.log("url_list has %d elements", url_list.length);
 
-	if(document.getElementById('allWindows').checked) {
+	/*if(document.getElementById('allWindows').checked) {
 		box.value = url_list['this'].join('\n')+'\n'+url_list['others'].join('\n');
 	} else {
 		box.value = url_list['this'].join('\n');
-	}
+	}/**/
+	box.value = filterURLs().join('\n');
 
 	//console.log("text area value:\n%s", box.value);
 
@@ -113,6 +110,64 @@ function tabsToBoard() {
 	}
 }
 
+
+function filterURLs() {
+	var patterns = document.getElementById('filter').value.trim(); // TODO
+
+	if(patterns == '')
+		//return null; // no patterns bro!
+		return url_list['this'];
+
+	//console.log("Patterns is not empty");
+
+	patterns = patterns.split(/\s/);
+
+	var len = patterns.length;
+	//console.log("patterns.lenght is "+len);
+	//console.log(patterns);
+	patterns = patterns.filter(function(element, index, array){
+		//console.log(element+".toLowerCase() != \":all:\" =>"+(element.toLowerCase() != ":all:"));
+		return element.toLowerCase() != ":all:";
+	});
+	//console.log(patterns);
+
+	var unfiltered = url_list['this'];
+	if(len != patterns.length) {
+		// :all: has been found and removed.
+		// let's add URLs from other windows
+		//console.log("patterns.lenght is now "+patterns.length);
+		//console.log("Adding URLs from other windows");
+		len = patterns.lenght;
+		unfiltered = unfiltered.concat(url_list['others'].filter(function(element, index, array){
+				return unfiltered.indexOf(element) == -1;
+			})
+		);
+	}
+
+	/*patterns = patterns.filter(function(element, index, array){
+		return element.toLowerCase() != ":clipboard:";
+	});
+
+	var clipboard = len != patterns.length;/**/
+
+	if(patterns.length == 0)
+		return unfiltered;
+
+	var filtered = [];
+	patterns.forEach(function(pat, pat_index, pat_array){
+		unfiltered.filter(function(url, url_index, url_array){
+			// only keep the unmatche de iterate on less items
+			//console.log("Add "+url+" ? =>"+(url.indexOf(pat) != -1 && filtered.indexOf(url) == -1));
+			if(url.indexOf(pat) != -1 && filtered.indexOf(url) == -1) {
+				filtered.push(url);
+				return false;
+			}
+			return true;
+		});
+	});
+
+	return filtered;
+}
 
 /**
  * Add an event listener for the onload event y the HTML.
@@ -126,6 +181,5 @@ document.addEventListener('DOMContentLoaded', function() {
 	i18nalize();
 	document.getElementById('open').addEventListener('click', boardToTabs);
 	document.getElementById('copy').addEventListener('click', tabsToBoard);
-	document.getElementById('clear').addEventListener('click', clear);
 });
 

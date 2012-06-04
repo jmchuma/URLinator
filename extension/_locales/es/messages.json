@@ -1,7 +1,7 @@
 {
 	"copyButton": {
-		"message": "Copiar",
-		"description": "Texto del botón \"Copiar\"."
+		"message": "Listar",
+		"description": "Texto del botón \"Listar\"."
 	},
 	"description": {
 		"message": "Abre y copia varias URLs de una vez.",

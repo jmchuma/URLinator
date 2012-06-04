@@ -1,11 +1,11 @@
 URLinator
 ===============================
 
-Many times I've wanted to copy the URLs from the pages I had opened to a text
-file, and I've always found my self doing it one by one. This may not be a big
-issue if there are only a few open tabs, but when you have many it become
-tiresome. For this reason (and because I wanted to try chrome.** API too) I
-decided to create this extension. The goal is to allow users to:
+Many times I've wanted to copy URLs from opened tabs to a text file, and I've
+always found my self doing it one by one. This may not be a big issue if there
+are only a few tabs opened, but when you have many it become tiresome. For this
+reason (and because I wanted to try chrome.* API) I decided to create URLinator.
+The goal is to allow users to:
 
 * Copy all URLs from the current window to a text area or to the clipboard.
 * Copy all URLs from all windows to a text area or to the clipboard.
@@ -15,12 +15,14 @@ new tabs in the current window.
     + URLs without an scheme (the _whatever://_ at the beginning) are treated as
 	  search terms and sent to Google search engine.
 
+In thinking about the clipboard thing so it may or may not be in the final version.
+
 Installation
 ------------
 
 For the time being the extension is not available on Chrome Web Store (and I
-don't know if it will ever be) so go to the [download page](URLinator/downloads "Download page")
-and grab the latest version.
+don't know if it will ever be) so go to the
+[download page](URLinator/downloads "Download page") and grab the latest version.
 
 Usage
 -----
@@ -41,16 +43,20 @@ This is how it works:
 * **Second checkbox:** allows interaction with the clipboard.
     - Checked: get and put content directly to the clipboard.
     - Unchecked: get and put content in the text area.
-* **Filter box:** allows to use words as filters when retrieving or opening URLs. **Not ready yet.**
+* **Filter box:** allows to use words as filters when retrieving or opening URLs.
+    - **:all:** is a special terms. If present retrieves URLs from all windows.
+	This is just for testing different aproaches to implement this behavioir.
 * **Textarea:** works as input and output (if the second checkbox is not selected).
-* **Open button:** opens new tabs with the URLs and search terms.
-* **Copy button:** grabs the URLs from the tabs.
+* **Put button:** opens new tabs with the URLs and search terms.
+* **Get button:** grabs the URLs from the tabs.
+* **Reset button:** reset the controls to their default values.
 
 ### Collecting URLs
 
 1. Click the extension button.
-2. Click the copy button.
-3. Do whatever you want with the content.
+2. Add filtering terms if needed
+3. Click the copy button.
+4. Do whatever you want with the content.
 
 **WARNING**: anything stored in textarea (and in the clipboard if the second checkbox is selected) is deleted!
 

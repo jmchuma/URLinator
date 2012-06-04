@@ -1,7 +1,7 @@
 {
 	"copyButton": {
-		"message": "Copy",
-		"description": "Text for the \"Copy\" button."
+		"message": "Get",
+		"description": "Text for the \"Get\" button."
 	},
 	"description": {
 		"message": "Opens an copies many URLs at once.",
@@ -24,8 +24,8 @@
 		"description": "Text for the first checkbox label."
 	},
 	"openButton": {
-		"message": "Open",
-		"description": "Text for the \"Open\" button."
+		"message": "Put",
+		"description": "Text for the \"Put\" button."
 	},
 	"resetButton": {
 		"message": "Reset",
