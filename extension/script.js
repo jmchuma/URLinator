@@ -9,8 +9,23 @@
  * Store the list of URLs
  */
 var url_list = {'this':[], 'others':[]};
-// TODO: another array to get the URLs?
-//var urls_in
+
+
+/**
+ * Join the two URL list into one:
+ */
+function joinURLLists() {
+	var ans = url_list['this'];
+
+	// don't add dupes
+	ans = ans.concat(url_list['others'].filter(function(elem, index, array){
+				return ans.indexOf(elem) == -1;
+			})
+		);
+
+	return ans;
+
+}
 
 
 /**
@@ -91,16 +106,7 @@ function tabsToBoard() {
 	var box = document.getElementById('urls');
 	var filter = document.getElementById('filter'); // TODO
 
-	//console.log("url_list has %d elements", url_list.length);
-
-	/*if(document.getElementById('allWindows').checked) {
-		box.value = url_list['this'].join('\n')+'\n'+url_list['others'].join('\n');
-	} else {
-		box.value = url_list['this'].join('\n');
-	}/**/
 	box.value = filterURLs().join('\n');
-
-	//console.log("text area value:\n%s", box.value);
 
 	if(document.getElementById('clipboard').checked) {
 		// select text
@@ -114,34 +120,27 @@ function tabsToBoard() {
 function filterURLs() {
 	var patterns = document.getElementById('filter').value.trim(); // TODO
 
-	if(patterns == '')
-		//return null; // no patterns bro!
-		return url_list['this'];
-
-	//console.log("Patterns is not empty");
+	if(patterns == '') { // no patterns bro!
+		if(document.getElementById('allWindows').checked)
+			return joinURLLists();
+		else
+			return url_list['this'];
+	}
 
 	patterns = patterns.split(/\s/);
 
 	var len = patterns.length;
-	//console.log("patterns.lenght is "+len);
-	//console.log(patterns);
 	patterns = patterns.filter(function(element, index, array){
-		//console.log(element+".toLowerCase() != \":all:\" =>"+(element.toLowerCase() != ":all:"));
 		return element.toLowerCase() != ":all:";
 	});
-	//console.log(patterns);
 
 	var unfiltered = url_list['this'];
-	if(len != patterns.length) {
-		// :all: has been found and removed.
-		// let's add URLs from other windows
-		//console.log("patterns.lenght is now "+patterns.length);
-		//console.log("Adding URLs from other windows");
+	// TODO choose one
+	// if :all: has been removed or the checkbox y checked
+	if(len != patterns.length || document.getElementById('allWindows').checked) {
+		document.getElementById('allWindows').checked = true; // in case it's not set
 		len = patterns.lenght;
-		unfiltered = unfiltered.concat(url_list['others'].filter(function(element, index, array){
-				return unfiltered.indexOf(element) == -1;
-			})
-		);
+		unfiltered = joinURLLists();
 	}
 
 	/*patterns = patterns.filter(function(element, index, array){
@@ -156,9 +155,10 @@ function filterURLs() {
 	var filtered = [];
 	patterns.forEach(function(pat, pat_index, pat_array){
 		unfiltered.filter(function(url, url_index, url_array){
-			// only keep the unmatche de iterate on less items
-			//console.log("Add "+url+" ? =>"+(url.indexOf(pat) != -1 && filtered.indexOf(url) == -1));
-			if(url.indexOf(pat) != -1 && filtered.indexOf(url) == -1) {
+			// keeping only the unmatched this iterates on less items
+			if(url.toLowerCase().indexOf(pat.toLowerCase()) != -1 && filtered.indexOf(url) == -1) {
+				// do not store url converted to lower case!!!
+				// admins may care about case sensitivity. What? I've seen it!
 				filtered.push(url);
 				return false;
 			}
