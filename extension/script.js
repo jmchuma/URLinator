@@ -18,7 +18,7 @@ function joinURLLists() {
 	var ans = url_list['this'];
 
 	// don't add dupes
-	ans = ans.concat(url_list['others'].filter(function(elem, index, array){
+	ans = ans.concat(url_list['others'].filter(function(elem, index, array) {
 				return ans.indexOf(elem) == -1;
 			})
 		);
@@ -130,8 +130,8 @@ function filterURLs() {
 	patterns = patterns.split(/\s/);
 
 	var len = patterns.length;
-	patterns = patterns.filter(function(element, index, array){
-		return element.toLowerCase() != ":all:";
+	patterns = patterns.filter(function(elem, index, array) {
+		return elem.toLowerCase() != ":all:";
 	});
 
 	var unfiltered = url_list['this'];
@@ -143,18 +143,21 @@ function filterURLs() {
 		unfiltered = joinURLLists();
 	}
 
-	/*patterns = patterns.filter(function(element, index, array){
-		return element.toLowerCase() != ":clipboard:";
+	patterns = patterns.filter(function(elem, index, array) {
+		return elem.toLowerCase() != ":clipboard:";
 	});
 
-	var clipboard = len != patterns.length;/**/
+	// TODO choose one (boxes or patterns)
+	if(!document.getElementById('clipboard').checked) {
+		document.getElementById('clipboard').checked = len != patterns.length;
+	}
 
 	if(patterns.length == 0)
 		return unfiltered;
 
 	var filtered = [];
-	patterns.forEach(function(pat, pat_index, pat_array){
-		unfiltered.filter(function(url, url_index, url_array){
+	patterns.forEach(function(pat, pat_index, pat_array) {
+		unfiltered.filter(function(url, url_index, url_array) {
 			// keeping only the unmatched this iterates on less items
 			if(url.toLowerCase().indexOf(pat.toLowerCase()) != -1 && filtered.indexOf(url) == -1) {
 				// do not store url converted to lower case!!!
