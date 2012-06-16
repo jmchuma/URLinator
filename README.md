@@ -33,7 +33,7 @@ How to do stuff with the thing.
 
 Clicking the extension button pops up something like this:
 
-![Popup controls](URLinator/raw/master/img/popup.png "Popup controls")
+![Popup controls](http://dl.dropbox.com/u/5226030/URLinator/popup.png "Popup controls")
 
 This is how it works:
 
