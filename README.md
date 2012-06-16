@@ -17,56 +17,7 @@ new tabs in the current window.
 
 In thinking about the clipboard thing so it may or may not be in the final version.
 
-Installation
-------------
-
-For the time being the extension is not available on Chrome Web Store (and I
-don't know if it will ever be) so go to the
-[download page](URLinator/downloads "Download page") and grab the latest version.
-
-Usage
------
-
-How to do stuff with the thing.
-
-### Controls
-
-Clicking the extension button pops up something like this:
-
-![Popup controls](http://dl.dropbox.com/u/5226030/URLinator/popup.png "Popup controls")
-
-This is how it works:
-
-* **First checkbox:**
-    - Checked: get URLs from tabs in all windows.
-    - Unchecked: get URLs from tabs in the current window.
-* **Second checkbox:** allows interaction with the clipboard.
-    - Checked: get and put content directly to the clipboard.
-    - Unchecked: get and put content in the text area.
-* **Filter box:** allows to use words as filters when retrieving or opening URLs.
-    - **:all:** is a special terms. If present retrieves URLs from all windows.
-	This is just for testing different aproaches to implement this behavioir.
-* **Textarea:** works as input and output (if the second checkbox is not selected).
-* **Put button:** opens new tabs with the URLs and search terms.
-* **Get button:** grabs the URLs from the tabs.
-* **Reset button:** reset the controls to their default values.
-
-### Collecting URLs
-
-1. Click the extension button.
-2. Add filtering terms if needed
-3. Click the copy button.
-4. Do whatever you want with the content.
-
-**WARNING**: anything stored in textarea (and in the clipboard if the second checkbox is selected) is deleted!
-
-
-### Opening URLs
-
-1. Click the extension button.
-2. Write some URLs in the text area. Separated with new lines, please.
-3. Click the open button.
-4. Enjoy!
-
-**WARNING**: anything stored in the text area is deleted!
-
+Go to the [download](URLinator/downloads "Download page") page to get the latest
+version and to the
+[usage](https://github.com/jmchuma/URLinator/wiki/Usage "Wiki::Usage")
+page for a brief manual.
