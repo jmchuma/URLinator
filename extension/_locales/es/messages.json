@@ -12,7 +12,7 @@
 		"description": "Etiqueta para los filtros."
 	},
 	"filterPlaceholder": {
-		"message": "Patr&oacute;n de filtros",
+		"message": "Patrón de filtros",
 		"description": "Mensaje a mostrar para los filtros."
 	},
 	"labelBoard": {
@@ -40,7 +40,7 @@
 		"description": "Mensaje a mostrar en el area de texto."
 	},
 	"tooltip": {
-		"message": "Pesta&ntilde;as <=> Portapapeles",
+		"message": "Pestañas <=> Portapapeles",
 		"description": "Texto que se muestra cuando el ratón pasa por encima del icono."
 	}
 }
