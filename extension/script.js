@@ -24,7 +24,6 @@ function joinURLLists() {
 		);
 
 	return ans;
-
 }
 
 
@@ -36,13 +35,14 @@ function i18nalize() {
 
 	for(var i = 0; i < objects.length; i++) {
 		// to understand this see HTML5 custom attributes
-		if(objects[i].dataset && objects[i].dataset.i18nId) {
-			objects[i].innerText = chrome.i18n.getMessage(objects[i].dataset.i18nId);
+		if(objects[i].dataset) {
+			if(objects[i].dataset.i18nText) {
+				objects[i].innerText = chrome.i18n.getMessage(objects[i].dataset.i18nText);
+			} else if(objects[i].dataset.i18nPlaceholder) {
+				objects[i].placeholder = chrome.i18n.getMessage(objects[i].dataset.i18nPlaceholder);
+			}
 		}
 	}
-
-	document.getElementById('filter').placeholder = chrome.i18n.getMessage('filterPlaceholder');
-	document.getElementById('urls').placeholder = chrome.i18n.getMessage('textareaPlaceholder');
 }
 
 

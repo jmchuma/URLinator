@@ -15,28 +15,26 @@ found in the LICENSE file.
 		<form id="searchForm">
 		<div>
 			<input id="allWindows" type="checkbox"/>
-			<label for="allWindows" data-i18n-id="labelWins"></label>
+			<label for="allWindows" data-i18n-text="labelWins"></label>
 
 			<input id="clipboard" type="checkbox"/>
-			<label for="clipboard" data-i18n-id="labelBoard"></label>
+			<label for="clipboard" data-i18n-text="labelBoard"></label>
 		</div>
 
 		<div>
-			<label for="filter" data-i18n-id="filterLabel"></label>
-			<!--input id="filter" type="text" placeholder="Filter patterns"/-->
-			<input id="filter" type="search" placeholder="Filter patterns"/>
+			<input id="filter" type="search" data-i18n-placeholder="filterPlaceholder"/>
 		</div>
 
 		<div>
-			<label for="urls" data-i18n-id="textareaLabel"></label>
-			<textarea id="urls" rows="6" cols="60" placeholder="List of URLs separated by blank characters." autofocus></textarea>
+			<textarea id="urls" rows="6" cols="60" data-i18n-placeholder="textareaPlaceholder" autofocus></textarea>
 		</div>
 
 		<div id="buttons">
-			<button id="open" type="button" data-i18n-id="openButton"></button>
-			<button id="copy" type="button" data-i18n-id="copyButton"></button>
-			<button id="reset" type="reset" data-i18n-id="resetButton"></button>
+			<button id="open" type="button" data-i18n-text="openButton"></button>
+			<button id="copy" type="button" data-i18n-text="copyButton"></button>
+			<button id="reset" type="reset" data-i18n-text="resetButton"></button>
 		</div>
+
 		</form>
 	</body>
 </html>
