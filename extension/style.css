@@ -39,19 +39,19 @@ button {
     outline: 0 transparent;
     overflow-x: visible;
     overflow-y: visible;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     padding-left: 13px;
     padding-right: 13px;
-    padding-top: 0px;
+    padding-top: 0;
     position: relative;
     text-align: center;
-    text-indent: 0px;
+    text-indent: 0;
     text-transform: none;
     top: 1px;
     white-space: nowrap;
     width: 65px;
     /*width: 13%;*/
-    word-spacing: 0px;
+    word-spacing: 0;
 }
 
 button#copy {
