@@ -125,7 +125,7 @@ function tabsToBoard() {
 		box.select();
 		// cut it
 		document.execCommand('cut');
-		message = 'out_ok_board';
+		message = 'out_ok_cb';
 	}
 
 	document.getElementById('status').innerHTML = chrome.i18n.getMessage(message, filtered_urls.length) ;
