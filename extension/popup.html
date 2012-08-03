@@ -26,14 +26,15 @@ found in the LICENSE file.
 		</div>
 
 		<div>
-			<textarea id="urls" rows="6" cols="60" data-i18n-placeholder="textareaPlaceholder" autofocus></textarea>
+			<textarea id="urls" class="left" rows="7" cols="54"  data-i18n-placeholder="textareaPlaceholder" autofocus></textarea>
+			<ul>
+				<li><button id="open"  type="button" data-i18n-text="openButton"  data-i18n-title="openButtonTitle" ></button></li>
+				<li><button id="copy"  type="button" data-i18n-text="copyButton"  data-i18n-title="copyButtonTitle" ></button></li>
+				<li><button id="reset" type="reset"  data-i18n-text="resetButton" data-i18n-title="resetButtonTitle"></button></li>
+			</ul>
 		</div>
 
-		<div id="buttons">
-			<button id="open" type="button" data-i18n-text="openButton"></button>
-			<button id="copy" type="button" data-i18n-text="copyButton"></button>
-			<button id="reset" type="reset" data-i18n-text="resetButton"></button>
-		</div>
+		<div id="status"></div>
 
 		</form>
 	</body>

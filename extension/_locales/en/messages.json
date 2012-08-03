@@ -3,8 +3,12 @@
 		"message": "Get",
 		"description": "Text for the \"Get\" button."
 	},
+	"copyButtonTitle": {
+		"message": "Get URL from browser",
+		"description": "Text for the \"Get\" button."
+	},
 	"description": {
-		"message": "Opens an copies many URLs at once.",
+		"message": "Opens and copies many URLs at once.",
 		"description": "Extension description."
 	},
 	"filterLabel": {
@@ -14,6 +18,10 @@
 	"filterPlaceholder": {
 		"message": "Filter patterns",
 		"description": "Placeholder for the filtering box."
+	},
+	"get_success": {
+		"message": "URLs copied from the browser to the clipboard",
+		"description": "URLs retrieved successfully from browser."
 	},
 	"labelBoard": {
 		"message": "Use clipboard?",
@@ -27,8 +35,20 @@
 		"message": "Put",
 		"description": "Text for the \"Put\" button."
 	},
+	"openButtonTitle": {
+		"message": "Open URLs in browser",
+		"description": "Text for the \"Put\" button."
+	},
+	"put_success": {
+		"message": "URLs copied from the clipboard to the browser",
+		"description": "Text successfully copied."
+	},
 	"resetButton": {
 		"message": "Reset",
+		"description": "Text for the \"Reset\" button."
+	},
+	"resetButtonTitle": {
+		"message": "Clean all information",
 		"description": "Text for the \"Reset\" button."
 	},
 	"textareaLabel": {

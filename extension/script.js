@@ -38,8 +38,12 @@ function i18nalize() {
 		if(objects[i].dataset) {
 			if(objects[i].dataset.i18nText) {
 				objects[i].innerText = chrome.i18n.getMessage(objects[i].dataset.i18nText);
-			} else if(objects[i].dataset.i18nPlaceholder) {
+			}
+			if(objects[i].dataset.i18nPlaceholder) {
 				objects[i].placeholder = chrome.i18n.getMessage(objects[i].dataset.i18nPlaceholder);
+			}
+			if(objects[i].dataset.i18nTitle) {
+				objects[i].title = chrome.i18n.getMessage(objects[i].dataset.i18nTitle);
 			}
 		}
 	}
@@ -96,6 +100,7 @@ function boardToTabs() {
 	});
 
 	box.value = '';
+	document.getElementById('status').innerHTML = chrome.i18n.getMessage('put_success') ;
 }
 
 
@@ -114,6 +119,8 @@ function tabsToBoard() {
 		// cut it
 		document.execCommand('cut');
 	}
+
+	document.getElementById('status').innerHTML = chrome.i18n.getMessage('get_success') ;
 }
 
 

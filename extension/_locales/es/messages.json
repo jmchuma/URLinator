@@ -3,6 +3,10 @@
 		"message": "Listar",
 		"description": "Texto del botón \"Listar\"."
 	},
+	"copyButtonTitle": {
+		"message": "Get URL from browser",
+		"description": "Text for the \"Get\" button."
+	},
 	"description": {
 		"message": "Abre y copia varias URLs de una vez.",
 		"description": "Descripción de la extensión."
@@ -14,6 +18,10 @@
 	"filterPlaceholder": {
 		"message": "Patrón de filtros",
 		"description": "Mensaje a mostrar para los filtros."
+	},
+	"get_success": {
+		"message": "URLs copiadas del navegador al portapapeles",
+		"description": "URLs recuperadas satisfactoriamente del portapapeles."
 	},
 	"labelBoard": {
 		"message": "¿Usar portapapeles?",
@@ -27,9 +35,21 @@
 		"message": "Abrir",
 		"description": "Texto del botón \"Abrir\"."
 	},
+	"openButtonTitle": {
+		"message": "Open URLs in browser",
+		"description": "Text for the \"Put\" button."
+	},
+	"put_success": {
+		"message": "URLs copiadas del portapapeles al navegador",
+		"description": "Texto informativo de copia con éxito."
+	},
 	"resetButton": {
-		"message": "Resetear",
+		"message": "Limpiar",
 		"description": "Texto del botón \"Resetear\"."
+	},
+	"resetButtonTitle": {
+		"message": "Clean all information",
+		"description": "Text for the \"Reset\" button."
 	},
 	"textareaLabel": {
 		"message": "URLs",
