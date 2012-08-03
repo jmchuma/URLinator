@@ -77,6 +77,8 @@ function URLsFromTabs() {
 function boardToTabs() {
 	var box = document.getElementById('urls');
 
+	var message = 'in_ok_txt'
+
 	if(document.getElementById('clipboard').checked) {
 		// clear content just in case?
 		box.value = '';
@@ -86,8 +88,10 @@ function boardToTabs() {
 		box.focus();
 		//box.autofocus = true;
 		document.execCommand('paste');
+		message = 'in_ok_cb'
 	}
 
+	var num = 0;
 	box.value.split(/\s/).forEach(function(url) {
 		url = url.trim();
 		if(url != "") {
@@ -96,11 +100,13 @@ function boardToTabs() {
 				url = "http://www.google.com/#q="+url;
 			}
 			chrome.tabs.create({'url': url.trim(), 'active': false});
+			num++;
 		}
 	});
 
 	box.value = '';
-	document.getElementById('status').innerHTML = chrome.i18n.getMessage('put_success') ;
+	document.getElementById('status').innerHTML = chrome.i18n.getMessage(message, num) ;
+	//console.log(num);
 }
 
 
@@ -109,21 +115,29 @@ function boardToTabs() {
  */
 function tabsToBoard() {
 	var box = document.getElementById('urls');
-	var filter = document.getElementById('filter'); // TODO
+	var filtered_urls = filterURLs();
+	var message = 'out_ok_txt';
 
-	box.value = filterURLs().join('\n');
+	box.value = filtered_urls.join('\n');
 
 	if(document.getElementById('clipboard').checked) {
 		// select text
 		box.select();
 		// cut it
 		document.execCommand('cut');
+		message = 'out_ok_board';
 	}
 
-	document.getElementById('status').innerHTML = chrome.i18n.getMessage('get_success') ;
+	document.getElementById('status').innerHTML = chrome.i18n.getMessage(message, filtered_urls.length) ;
+	//console.log(filtered_urls.length);
 }
 
 
+/**
+ * Filters URLs according to the value of the serch box.
+ *
+ * Returns an array with the result.
+ */
 function filterURLs() {
 	var patterns = document.getElementById('filter').value.trim(); // TODO
 

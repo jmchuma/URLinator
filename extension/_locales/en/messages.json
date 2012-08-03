@@ -19,9 +19,25 @@
 		"message": "Filter patterns",
 		"description": "Placeholder for the filtering box."
 	},
-	"get_success": {
-		"message": "URLs copied from the browser to the clipboard",
-		"description": "URLs retrieved successfully from browser."
+	"in_ok_cb": {
+		"message": "$NUM$ URLs successfully opened from the clipboard",
+		"description": "Info text after retrieving URLs from clipboard.",
+		"placeholders": {
+			"NUM": {
+				"content": "$1",
+				"example": "5"
+			}
+		}
+	},
+	"in_ok_txt": {
+		"message": "$NUM$ URLs successfully opened",
+		"description": "Info text after retrieving URLs from textarea.",
+		"placeholders": {
+			"NUM": {
+				"content": "$1",
+				"example": "5"
+			}
+		}
 	},
 	"labelBoard": {
 		"message": "Use clipboard?",
@@ -39,9 +55,25 @@
 		"message": "Open URLs in browser",
 		"description": "Text for the \"Put\" button."
 	},
-	"put_success": {
-		"message": "URLs copied from the clipboard to the browser",
-		"description": "Text successfully copied."
+	"out_ok_cb": {
+		"message": "$NUM$ URLs copied to the clipboard",
+		"description": "URLs copied successfully to the clipboard.",
+		"placeholders": {
+			"NUM": {
+				"content": "$1",
+				"example": "5"
+			}
+		}
+	},
+	"out_ok_txt": {
+		"message": "$NUM$ URLs copied to the text area",
+		"description": "URLs copied successfully to the text area.",
+		"placeholders": {
+			"NUM": {
+				"content": "$1",
+				"example": "5"
+			}
+		}
 	},
 	"resetButton": {
 		"message": "Reset",

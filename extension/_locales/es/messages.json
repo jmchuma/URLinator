@@ -19,9 +19,25 @@
 		"message": "Patrón de filtros",
 		"description": "Mensaje a mostrar para los filtros."
 	},
-	"get_success": {
-		"message": "URLs copiadas del navegador al portapapeles",
-		"description": "URLs recuperadas satisfactoriamente del portapapeles."
+	"in_ok_cb": {
+		"message": "$NUM$ URLs abiertas con éxito desde el portapapeles",
+		"description": "Texto informativo de copia con éxito desde el portapapeles.",
+		"placeholders": {
+			"NUM": {
+				"content": "$1",
+				"example": "5"
+			}
+		}
+	},
+	"in_ok_txt": {
+		"message": "$NUM$ URLs abiertas con éxito",
+		"description": "Texto informativo de copia con éxito desde el textarea.",
+		"placeholders": {
+			"NUM": {
+				"content": "$1",
+				"example": "5"
+			}
+		}
 	},
 	"labelBoard": {
 		"message": "¿Usar portapapeles?",
@@ -39,9 +55,25 @@
 		"message": "Open URLs in browser",
 		"description": "Text for the \"Put\" button."
 	},
-	"put_success": {
-		"message": "URLs copiadas del portapapeles al navegador",
-		"description": "Texto informativo de copia con éxito."
+	"out_ok_cb": {
+		"message": "$NUM$ URLs copiadas al portapapeles",
+		"description": "URLs copiadas con éxito al portapapeles.",
+		"placeholders": {
+			"NUM": {
+				"content": "$1",
+				"example": "5"
+			}
+		}
+	},
+	"out_ok_txt": {
+		"message": "$NUM$ URLs copiadas al area de texto",
+		"description": "URLs copiadas con éxito al area de texto.",
+		"placeholders": {
+			"NUM": {
+				"content": "$1",
+				"example": "5"
+			}
+		}
 	},
 	"resetButton": {
 		"message": "Limpiar",
