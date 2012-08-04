@@ -52,23 +52,18 @@ button {
     text-transform: none;
     top: 1px;
     white-space: nowrap;
-    /*width: 65px;*/
     width: 60px;
     word-spacing: 0;
 }
 
 div {
     margin: 1% 0;
-	padding: 0;
-/*    border: 1px solid;
-    border-radius: 5px;
-/**/
+    padding: 0;
 }
 
 div#status {
     padding: 1%;
     text-align: center;
-/*    height: 30px;*/
 }
 
 input[type="checkbox"] {
@@ -80,10 +75,8 @@ input#filter {
 }
 
 textarea#urls {
-/*    height: 100%;*/
     margin: 1% 1% 0 0;
-	padding 0;
-/*    width: 80%;*/
+    padding 0;
 }
 
 ul {
@@ -91,4 +84,3 @@ ul {
     margin: 0;
     padding: 0;
 }
-

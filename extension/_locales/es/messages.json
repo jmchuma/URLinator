@@ -4,16 +4,12 @@
 		"description": "Texto del botón \"Listar\"."
 	},
 	"copyButtonTitle": {
-		"message": "Get URL from browser",
-		"description": "Text for the \"Get\" button."
+		"message": "Obtener URLs del navegador",
+		"description": "Descripción para el botón \"Listar\"."
 	},
 	"description": {
 		"message": "Abre y copia varias URLs de una vez.",
 		"description": "Descripción de la extensión."
-	},
-	"filterLabel": {
-		"message": "Filtro",
-		"description": "Etiqueta para los filtros."
 	},
 	"filterPlaceholder": {
 		"message": "Patrón de filtros",
@@ -52,8 +48,8 @@
 		"description": "Texto del botón \"Abrir\"."
 	},
 	"openButtonTitle": {
-		"message": "Open URLs in browser",
-		"description": "Text for the \"Put\" button."
+		"message": "Abrir URLs en el navegador",
+		"description": "Descripción para el botón \"Abrir\"."
 	},
 	"out_ok_cb": {
 		"message": "$NUM$ URLs copiadas al portapapeles",
@@ -76,16 +72,12 @@
 		}
 	},
 	"resetButton": {
-		"message": "Limpiar",
-		"description": "Texto del botón \"Resetear\"."
+		"message": "Borrar",
+		"description": "Texto del botón \"Borrar\"."
 	},
 	"resetButtonTitle": {
-		"message": "Clean all information",
-		"description": "Text for the \"Reset\" button."
-	},
-	"textareaLabel": {
-		"message": "URLs",
-		"description": "Texto para la etiequta del text area."
+		"message": "Borrar toda la información",
+		"description": "Texto para el botón \"Borrar\"."
 	},
 	"textareaPlaceholder": {
 		"message": "Lista de URLs separadas por caracteres blancos.",

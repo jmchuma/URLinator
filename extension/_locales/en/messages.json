@@ -5,15 +5,11 @@
 	},
 	"copyButtonTitle": {
 		"message": "Get URL from browser",
-		"description": "Text for the \"Get\" button."
+		"description": "Tooltip for the \"Get\" button."
 	},
 	"description": {
 		"message": "Opens and copies many URLs at once.",
 		"description": "Extension description."
-	},
-	"filterLabel": {
-		"message": "Filter",
-		"description": "Latel for the filtering box."
 	},
 	"filterPlaceholder": {
 		"message": "Filter patterns",
@@ -53,7 +49,7 @@
 	},
 	"openButtonTitle": {
 		"message": "Open URLs in browser",
-		"description": "Text for the \"Put\" button."
+		"description": "Tooltip for the \"Put\" button."
 	},
 	"out_ok_cb": {
 		"message": "$NUM$ URLs copied to the clipboard",
@@ -80,12 +76,8 @@
 		"description": "Text for the \"Reset\" button."
 	},
 	"resetButtonTitle": {
-		"message": "Clean all information",
-		"description": "Text for the \"Reset\" button."
-	},
-	"textareaLabel": {
-		"message": "URLs",
-		"description": "Label for the text area."
+		"message": "Delete all information",
+		"description": "Tooltip for the \"Reset\" button."
 	},
 	"textareaPlaceholder": {
 		"message": "List of the URLs separated by blank character.",

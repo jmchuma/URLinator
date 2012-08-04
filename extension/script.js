@@ -12,7 +12,9 @@ var url_list = {'this':[], 'others':[]};
 
 
 /**
- * Join the two URL list into one:
+ * Join the two URL list in one. Remove duplicate URLs if any.
+ *
+ * Return a list containig non duplicate URLs from all the opened tabs.
  */
 function joinURLLists() {
 	var ans = url_list['this'];
@@ -28,7 +30,9 @@ function joinURLLists() {
 
 
 /**
- * Translate text in the popup interface
+ * Translate text in the popup interface.
+ *
+ * Returns: nothing.
  */
 function i18nalize() {
 	var objects = document.getElementsByTagName('*');
@@ -51,7 +55,10 @@ function i18nalize() {
 
 
 /**
- * Populate the lists containing the URLs from tabs
+ * Populate the lists containing the URLs from tabs.
+ * Modifies the value of url_list.
+ *
+ * Returns: nothing.
  */
 function URLsFromTabs() {
 	chrome.windows.getCurrent(function(currentWindow) {
@@ -73,6 +80,8 @@ function URLsFromTabs() {
 
 /**
  * Copies URL from clipboard to tabs
+ *
+ * Returns: nothing.
  */
 function boardToTabs() {
 	var box = document.getElementById('urls');
@@ -80,13 +89,9 @@ function boardToTabs() {
 	var message = 'in_ok_txt'
 
 	if(document.getElementById('clipboard').checked) {
-		// clear content just in case?
+		// clear content just in case
 		box.value = '';
-		// WARNING: according to https://developer.mozilla.org/en/DOM/HTMLTextAreaElement
-		//			the focus method is obselete.
-		// TODO: seek another way to focus on the textarea.
 		box.focus();
-		//box.autofocus = true;
 		document.execCommand('paste');
 		message = 'in_ok_cb'
 	}
@@ -95,7 +100,7 @@ function boardToTabs() {
 	box.value.split(/\s/).forEach(function(url) {
 		url = url.trim();
 		if(url != "") {
-			// check it it contains the URL schema
+			// check if it contains the URL schema
 			if(url.search('^[a-zA-Z]+://') == -1) {
 				url = "http://www.google.com/#q="+url;
 			}
@@ -106,7 +111,6 @@ function boardToTabs() {
 
 	box.value = '';
 	document.getElementById('status').innerHTML = chrome.i18n.getMessage(message, num) ;
-	//console.log(num);
 }
 
 
@@ -156,7 +160,7 @@ function filterURLs() {
 	});
 
 	var unfiltered = url_list['this'];
-	// TODO choose one
+	// TODO choose one (boxes or patterns)
 	// if :all: has been removed or the checkbox y checked
 	if(len != patterns.length || document.getElementById('allWindows').checked) {
 		document.getElementById('allWindows').checked = true; // in case it's not set
