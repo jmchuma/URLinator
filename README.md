@@ -17,7 +17,10 @@ new tabs in the current window.
 
 In thinking about the clipboard thing so it may or may not be in the final version.
 
-Go to the [download](URLinator/downloads "Download page") page to get the latest
-version and to the
+Go to the
 [usage](https://github.com/jmchuma/URLinator/wiki/Usage "Wiki::Usage")
 page for a brief manual.
+
+[![Available in the Chrome Web Store][1]][2]
+[1]: https://developers.google.com/chrome/web-store/images/branding/ChromeWebStore_Badge_v2_206x58.png
+[2]: https://chrome.google.com/webstore/detail/urlinator/ijcanhafkhefgadjgpnbgeokcgbaepdi
