@@ -9,6 +9,7 @@
  * Store the list of URLs
  */
 var url_list = {'this':[], 'others':[]};
+var blank_tabs = [];
 
 
 /**
@@ -67,6 +68,9 @@ function URLsFromTabs() {
 				var id = 'this';
 				if(tab.windowId != currentWindow.id) {
 					id = 'others';
+				} else if(tab.url == 'chrome://newtab/'){
+					// add to list of empty tabs
+					blank_tabs.push(tab.id);
 				}
 
 				if(url_list[id].indexOf(tab.url) == -1) {
@@ -97,14 +101,21 @@ function boardToTabs() {
 	}
 
 	var num = 0;
+
 	box.value.split(/\s/).forEach(function(url) {
 		url = url.trim();
 		if(url != "") {
 			// check if it contains the URL schema
 			if(url.search('^[a-zA-Z]+://') == -1) {
+				// TODO change this to use the default search engine
 				url = "http://www.google.com/#q="+url;
 			}
-			chrome.tabs.create({'url': url.trim(), 'active': false});
+
+			if(blank_tabs.length){
+				chrome.tabs.update(blank_tabs.shift(), {'url':url});
+			} else {
+				chrome.tabs.create({'url': url.trim(), 'active': false});
+			}
 			num++;
 		}
 	});
