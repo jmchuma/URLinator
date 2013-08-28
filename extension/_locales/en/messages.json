@@ -25,16 +25,6 @@
 			}
 		}
 	},
-	"in_ok_txt": {
-		"message": "$NUM$ URLs successfully opened",
-		"description": "Info text after retrieving URLs from textarea.",
-		"placeholders": {
-			"NUM": {
-				"content": "$1",
-				"example": "5"
-			}
-		}
-	},
 	"labelBoard": {
 		"message": "Use clipboard?",
 		"description": "Text for the second checkbox label."
@@ -61,16 +51,6 @@
 			}
 		}
 	},
-	"out_ok_txt": {
-		"message": "$NUM$ URLs copied to the text area",
-		"description": "URLs copied successfully to the text area.",
-		"placeholders": {
-			"NUM": {
-				"content": "$1",
-				"example": "5"
-			}
-		}
-	},
 	"resetButton": {
 		"message": "Reset",
 		"description": "Text for the \"Reset\" button."
@@ -78,10 +58,6 @@
 	"resetButtonTitle": {
 		"message": "Delete all information",
 		"description": "Tooltip for the \"Reset\" button."
-	},
-	"textareaPlaceholder": {
-		"message": "List of the URLs separated by blank character.",
-		"description": "Message shown in the text area."
 	},
 	"tooltip": {
 		"message": "Tabs <=> Clipboard",

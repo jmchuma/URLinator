@@ -88,21 +88,15 @@ function URLsFromTabs() {
  * Returns: nothing.
  */
 function boardToTabs() {
-	var box = document.getElementById('urls');
-
-	var message = 'in_ok_txt'
-
-	if(document.getElementById('clipboard').checked) {
-		// clear content just in case
-		box.value = '';
-		box.focus();
-		document.execCommand('paste');
-		message = 'in_ok_cb'
-	}
+	var container = document.getElementById('urls');
+	container.value='';
+	container.focus();
+	document.execCommand('paste');
+	var values = container.value;
 
 	var num = 0;
 
-	box.value.split(/\s/).forEach(function(url) {
+	values.split(/\s/).forEach(function(url) {
 		url = url.trim();
 		if(url != "") {
 			// check if it contains the URL schema
@@ -120,8 +114,7 @@ function boardToTabs() {
 		}
 	});
 
-	box.value = '';
-	document.getElementById('status').innerHTML = chrome.i18n.getMessage(message, num) ;
+	document.getElementById('status').innerHTML = chrome.i18n.getMessage('in_ok_cb', num) ;
 }
 
 
@@ -129,22 +122,16 @@ function boardToTabs() {
  * Copies URL from tabs to clipboard
  */
 function tabsToBoard() {
-	var box = document.getElementById('urls');
 	var filtered_urls = filterURLs();
-	var message = 'out_ok_txt';
+	var container = document.getElementById('urls');
+	container.value = filtered_urls.join('\n');
 
-	box.value = filtered_urls.join('\n');
+	// select text
+	container.select();
+	// cut it
+	document.execCommand('cut');
 
-	if(document.getElementById('clipboard').checked) {
-		// select text
-		box.select();
-		// cut it
-		document.execCommand('cut');
-		message = 'out_ok_cb';
-	}
-
-	document.getElementById('status').innerHTML = chrome.i18n.getMessage(message, filtered_urls.length) ;
-	//console.log(filtered_urls.length);
+	document.getElementById('status').innerHTML = chrome.i18n.getMessage('out_ok_cb', filtered_urls.length);
 }
 
 

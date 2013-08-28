@@ -74,9 +74,13 @@ input#filter {
     width: 100%;
 }
 
-textarea#urls {
+textarea {
     margin: 1% 1% 0 0;
-    padding 0;
+    height: 0px;
+    position: absolute;
+    top: 27%;
+    width: 0px;
+    z-index: -1;
 }
 
 ul {
